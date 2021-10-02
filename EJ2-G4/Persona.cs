@@ -11,8 +11,8 @@ namespace EJ2_G4
         string nombre;
         public string Nombre
         {
-            get { return nombre; }
-            set {nombre=value;}
+            get { return nombre;}
+`           set {nombre=value;}
         }
         public string Apellido { get => apellido; set => apellido = value; }
 

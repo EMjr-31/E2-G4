@@ -36,7 +36,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtUniversidad = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbCarreras = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -67,6 +66,9 @@
             this.label18 = new System.Windows.Forms.Label();
             this.txtProyecto = new System.Windows.Forms.TextBox();
             this.dgvIngenieria = new System.Windows.Forms.DataGridView();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.cbmUniversidades = new System.Windows.Forms.ComboBox();
             this.Datos.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -103,6 +105,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbmUniversidades);
             this.groupBox2.Controls.Add(this.txtProyecto);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.txtNivel);
@@ -111,7 +114,6 @@
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.cmbCarreras);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txtUniversidad);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(6, 91);
             this.groupBox2.Name = "groupBox2";
@@ -161,13 +163,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Universidad: ";
             // 
-            // txtUniversidad
-            // 
-            this.txtUniversidad.Location = new System.Drawing.Point(75, 35);
-            this.txtUniversidad.Name = "txtUniversidad";
-            this.txtUniversidad.Size = new System.Drawing.Size(100, 20);
-            this.txtUniversidad.TabIndex = 4;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -183,7 +178,7 @@
             this.cmbCarreras.FormattingEnabled = true;
             this.cmbCarreras.Location = new System.Drawing.Point(75, 77);
             this.cmbCarreras.Name = "cmbCarreras";
-            this.cmbCarreras.Size = new System.Drawing.Size(100, 21);
+            this.cmbCarreras.Size = new System.Drawing.Size(116, 21);
             this.cmbCarreras.TabIndex = 5;
             // 
             // groupBox3
@@ -241,6 +236,7 @@
             this.txtMat1.Name = "txtMat1";
             this.txtMat1.Size = new System.Drawing.Size(100, 20);
             this.txtMat1.TabIndex = 0;
+            this.txtMat1.Text = "Matematicas";
             // 
             // label7
             // 
@@ -257,6 +253,7 @@
             this.txtMat2.Name = "txtMat2";
             this.txtMat2.Size = new System.Drawing.Size(100, 20);
             this.txtMat2.TabIndex = 4;
+            this.txtMat2.Text = "Ciencias";
             // 
             // label8
             // 
@@ -273,6 +270,7 @@
             this.txtMat3.Name = "txtMat3";
             this.txtMat3.Size = new System.Drawing.Size(100, 20);
             this.txtMat3.TabIndex = 6;
+            this.txtMat3.Text = "Linguistica";
             // 
             // label9
             // 
@@ -382,7 +380,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(184, 42);
+            this.label16.Location = new System.Drawing.Point(206, 36);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(44, 13);
             this.label16.TabIndex = 6;
@@ -391,7 +389,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(184, 80);
+            this.label17.Location = new System.Drawing.Point(206, 80);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(37, 13);
             this.label17.TabIndex = 7;
@@ -399,14 +397,14 @@
             // 
             // txtCarnet
             // 
-            this.txtCarnet.Location = new System.Drawing.Point(234, 35);
+            this.txtCarnet.Location = new System.Drawing.Point(259, 35);
             this.txtCarnet.Name = "txtCarnet";
             this.txtCarnet.Size = new System.Drawing.Size(100, 20);
             this.txtCarnet.TabIndex = 8;
             // 
             // txtNivel
             // 
-            this.txtNivel.Location = new System.Drawing.Point(234, 77);
+            this.txtNivel.Location = new System.Drawing.Point(259, 73);
             this.txtNivel.Name = "txtNivel";
             this.txtNivel.Size = new System.Drawing.Size(100, 20);
             this.txtNivel.TabIndex = 9;
@@ -431,20 +429,51 @@
             // dgvIngenieria
             // 
             this.dgvIngenieria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIngenieria.Location = new System.Drawing.Point(12, 287);
+            this.dgvIngenieria.Location = new System.Drawing.Point(12, 321);
             this.dgvIngenieria.Name = "dgvIngenieria";
-            this.dgvIngenieria.Size = new System.Drawing.Size(776, 268);
+            this.dgvIngenieria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect;
+            this.dgvIngenieria.Size = new System.Drawing.Size(776, 260);
             this.dgvIngenieria.TabIndex = 1;
+            this.dgvIngenieria.DoubleClick += new System.EventHandler(this.dgvIngenieria_DoubleClick);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(618, 287);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(713, 287);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 3;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            // 
+            // cbmUniversidades
+            // 
+            this.cbmUniversidades.FormattingEnabled = true;
+            this.cbmUniversidades.Location = new System.Drawing.Point(75, 30);
+            this.cbmUniversidades.Name = "cbmUniversidades";
+            this.cbmUniversidades.Size = new System.Drawing.Size(121, 21);
+            this.cbmUniversidades.TabIndex = 12;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 567);
+            this.ClientSize = new System.Drawing.Size(800, 593);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dgvIngenieria);
             this.Controls.Add(this.Datos);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Datos.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -464,7 +493,6 @@
         private System.Windows.Forms.GroupBox Datos;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtUniversidad;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
@@ -500,6 +528,9 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox cmbCarreras;
         private System.Windows.Forms.DataGridView dgvIngenieria;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.ComboBox cbmUniversidades;
     }
 }
 
