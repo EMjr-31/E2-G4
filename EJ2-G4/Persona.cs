@@ -12,7 +12,7 @@ namespace EJ2_G4
         public string Nombre
         {
             get { return nombre;}
-`           set {nombre=value;}
+           set {nombre=value;}
         }
         public string Apellido { get => apellido; set => apellido = value; }
 

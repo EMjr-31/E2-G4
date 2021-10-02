@@ -10,24 +10,22 @@ namespace EJ2_G4
     {
         string universidad;
         string carrera;
-        string[] materias= new string[3];
-        float[] nota =new float[3];
-       float cum;
+        string materia1;
+        string materia2;
+        string materia3;
+        float nota1;
+        float nota2;
+        float nota3;
+        float cum;
 
         public string Universidad { get => universidad; set => universidad = value; }
         public string Carrera { get => carrera; set => carrera = value; }
-        public string[] Materias { get => materias; set => materias = value; }
-        public float[] Nota { get => nota; set => nota = value; }
         public float Cum { get => cum; set => cum = value; }
-
-        public void cal_cum()
-        {
-            float suma=0;
-            for (int i = 0; i < 3; i++)
-            {
-                suma = suma+nota[i];
-            }
-            Cum = suma/ 3;
-        }
+        public string Materia1 { get => materia1; set => materia1 = value; }
+        public string Materia2 { get => materia2; set => materia2 = value; }
+        public string Materia3 { get => materia3; set => materia3 = value; }
+        public float Nota1 { get => nota1; set => nota1 = value; }
+        public float Nota2 { get => nota2; set => nota2 = value; }
+        public float Nota3 { get => nota3; set => nota3 = value; }
     }
 }

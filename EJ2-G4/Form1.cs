@@ -78,7 +78,75 @@ namespace EJ2_G4
 
         private void dgvIngenieria_DoubleClick(object sender, EventArgs e)
         {
+            btnGuardar.Text = "Modificar";
+            DataGridViewRow seleccion = dgvIngenieria.SelectedRows[0];
+            index = dgvIngenieria.Rows.IndexOf(seleccion);
 
+            Ingenieria ing = Ingeniero[index];
+            txtApellido.Text= ing.Apellido;
+            txtCarnet.Text= ing.Carnet;
+            txtHorasCompl.Text=ing.Horas_compl.ToString();
+            txtHorasT.Text= ing.Total_horas.ToString();
+            txtMat1.Text=ing.Materias[0];
+            txtMat2.Text = ing.Materias[1];
+            txtMat3.Text = ing.Materias[2];
+            txtNivel.Text = ing.Nivel;
+            txtNombre.Text=ing.Nombre;
+            txtNota1.Text=ing.Nota[0].ToString();
+            txtNota2.Text = ing.Nota[1].ToString();
+            txtNota3.Text = ing.Nota[2].ToString();
+            txtProyecto.Text=ing.Proyecto;
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            Ingenieria ing = new Ingenieria();
+            ing.Apellido = txtApellido.Text;
+            ing.Carnet = txtCarnet.Text;
+            ing.Horas_compl= int.Parse(txtHorasCompl.Text);
+            ing.Total_horas=int.Parse(txtHorasT.Text);
+            ing.Materias[0] = txtMat1.Text;
+            ing.Materias[1] = txtMat2.Text;
+            ing.Materias[2] = txtMat3.Text;
+            ing.Nivel = txtNivel.Text;
+            ing.Nombre = txtNombre.Text;
+            ing.Nota[0] = float.Parse(txtNota1.Text);
+            ing.Nota[1] = float.Parse(txtNota2.Text);
+            ing.Nota[2] = float.Parse(txtNota3.Text);
+            ing.Proyecto= txtProyecto.Text;
+            ///Caculo de cum
+            float suma = 0;
+            suma = float.Parse(txtNota1.Text) + float.Parse(txtNota2.Text) + float.Parse(txtNota3.Text);
+            ing.Cum = suma / 3;
+            ////verificacion de indeice
+            if (index > -1)
+            {
+                Ingeniero[index] = ing;
+                index = -1;
+            }
+            else
+            {
+                Ingeniero.Add(ing);
+                btnGuardar.Text = "Guardar";
+            }
+            Actualizar();
+            Limpiar();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (index > -1)
+            {
+                Ingeniero.RemoveAt(index);
+                index = -1;
+                Actualizar();
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila");
+            }
+            
         }
     }
 }
