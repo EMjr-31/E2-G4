@@ -69,23 +69,30 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.cbmUniversidades = new System.Windows.Forms.ComboBox();
+            this.Estadisticas = new System.Windows.Forms.GroupBox();
+            this.btnEstudientes = new System.Windows.Forms.Button();
+            this.btnPromedio = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.Datos.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngenieria)).BeginInit();
+            this.Estadisticas.SuspendLayout();
             this.SuspendLayout();
             // 
             // Datos
             // 
             this.Datos.Controls.Add(this.groupBox4);
+            this.Datos.Controls.Add(this.btnGuardar);
             this.Datos.Controls.Add(this.groupBox3);
+            this.Datos.Controls.Add(this.btnEliminar);
             this.Datos.Controls.Add(this.groupBox2);
             this.Datos.Controls.Add(this.groupBox1);
             this.Datos.Location = new System.Drawing.Point(12, 12);
             this.Datos.Name = "Datos";
-            this.Datos.Size = new System.Drawing.Size(776, 269);
+            this.Datos.Size = new System.Drawing.Size(776, 294);
             this.Datos.TabIndex = 0;
             this.Datos.TabStop = false;
             this.Datos.Text = "Datos";
@@ -438,7 +445,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(618, 287);
+            this.btnEliminar.Location = new System.Drawing.Point(568, 261);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 2;
@@ -448,7 +455,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(713, 287);
+            this.btnGuardar.Location = new System.Drawing.Point(677, 261);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 3;
@@ -464,13 +471,54 @@
             this.cbmUniversidades.Size = new System.Drawing.Size(121, 21);
             this.cbmUniversidades.TabIndex = 12;
             // 
+            // Estadisticas
+            // 
+            this.Estadisticas.Controls.Add(this.btnPromedio);
+            this.Estadisticas.Controls.Add(this.btnEstudientes);
+            this.Estadisticas.Location = new System.Drawing.Point(12, 593);
+            this.Estadisticas.Name = "Estadisticas";
+            this.Estadisticas.Size = new System.Drawing.Size(776, 56);
+            this.Estadisticas.TabIndex = 4;
+            this.Estadisticas.TabStop = false;
+            this.Estadisticas.Text = "Estadsiticas:";
+            // 
+            // btnEstudientes
+            // 
+            this.btnEstudientes.Location = new System.Drawing.Point(98, 19);
+            this.btnEstudientes.Name = "btnEstudientes";
+            this.btnEstudientes.Size = new System.Drawing.Size(204, 23);
+            this.btnEstudientes.TabIndex = 0;
+            this.btnEstudientes.Text = "Cantidad de Estudiantes";
+            this.btnEstudientes.UseVisualStyleBackColor = true;
+            this.btnEstudientes.Click += new System.EventHandler(this.btnEstudientes_Click);
+            // 
+            // btnPromedio
+            // 
+            this.btnPromedio.Location = new System.Drawing.Point(523, 19);
+            this.btnPromedio.Name = "btnPromedio";
+            this.btnPromedio.Size = new System.Drawing.Size(204, 23);
+            this.btnPromedio.TabIndex = 1;
+            this.btnPromedio.Text = "Nota Promedio ";
+            this.btnPromedio.UseVisualStyleBackColor = true;
+            this.btnPromedio.Click += new System.EventHandler(this.btnPromedio_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(713, 652);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 5;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 593);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.btnEliminar);
+            this.ClientSize = new System.Drawing.Size(800, 679);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.Estadisticas);
             this.Controls.Add(this.dgvIngenieria);
             this.Controls.Add(this.Datos);
             this.Name = "Form1";
@@ -486,6 +534,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngenieria)).EndInit();
+            this.Estadisticas.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -533,6 +582,10 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.ComboBox cbmUniversidades;
+        private System.Windows.Forms.GroupBox Estadisticas;
+        private System.Windows.Forms.Button btnPromedio;
+        private System.Windows.Forms.Button btnEstudientes;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
 
