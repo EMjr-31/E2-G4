@@ -431,7 +431,7 @@
             this.dgvIngenieria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIngenieria.Location = new System.Drawing.Point(12, 321);
             this.dgvIngenieria.Name = "dgvIngenieria";
-            this.dgvIngenieria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect;
+            this.dgvIngenieria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvIngenieria.Size = new System.Drawing.Size(776, 260);
             this.dgvIngenieria.TabIndex = 1;
             this.dgvIngenieria.DoubleClick += new System.EventHandler(this.dgvIngenieria_DoubleClick);

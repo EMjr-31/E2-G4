@@ -87,15 +87,17 @@ namespace EJ2_G4
             txtCarnet.Text= ing.Carnet;
             txtHorasCompl.Text=ing.Horas_compl.ToString();
             txtHorasT.Text= ing.Total_horas.ToString();
-            txtMat1.Text=ing.Materias[0];
-            txtMat2.Text = ing.Materias[1];
-            txtMat3.Text = ing.Materias[2];
+            txtMat1.Text=ing.Materia1;
+            txtMat2.Text = ing.Materia2;
+            txtMat3.Text = ing.Materia3;
             txtNivel.Text = ing.Nivel;
             txtNombre.Text=ing.Nombre;
-            txtNota1.Text=ing.Nota[0].ToString();
-            txtNota2.Text = ing.Nota[1].ToString();
-            txtNota3.Text = ing.Nota[2].ToString();
+            txtNota1.Text=ing.Nota1.ToString();
+            txtNota2.Text = ing.Nota2.ToString();
+            txtNota3.Text = ing.Nota3.ToString();
             txtProyecto.Text=ing.Proyecto;
+            cbmUniversidades.Text= ing.Universidad;
+            cmbCarreras.Text= ing.Carrera;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -105,15 +107,17 @@ namespace EJ2_G4
             ing.Carnet = txtCarnet.Text;
             ing.Horas_compl= int.Parse(txtHorasCompl.Text);
             ing.Total_horas=int.Parse(txtHorasT.Text);
-            ing.Materias[0] = txtMat1.Text;
-            ing.Materias[1] = txtMat2.Text;
-            ing.Materias[2] = txtMat3.Text;
+            ing.Materia1 = txtMat1.Text;
+            ing.Materia2 = txtMat2.Text;
+            ing.Materia3 = txtMat3.Text;
             ing.Nivel = txtNivel.Text;
             ing.Nombre = txtNombre.Text;
-            ing.Nota[0] = float.Parse(txtNota1.Text);
-            ing.Nota[1] = float.Parse(txtNota2.Text);
-            ing.Nota[2] = float.Parse(txtNota3.Text);
+            ing.Nota1= float.Parse(txtNota1.Text);
+            ing.Nota2 = float.Parse(txtNota2.Text);
+            ing.Nota3 = float.Parse(txtNota3.Text);
             ing.Proyecto= txtProyecto.Text;
+            ing.Universidad = cbmUniversidades.Text;
+            ing.Carrera = cmbCarreras.Text;
             ///Caculo de cum
             float suma = 0;
             suma = float.Parse(txtNota1.Text) + float.Parse(txtNota2.Text) + float.Parse(txtNota3.Text);
@@ -127,8 +131,9 @@ namespace EJ2_G4
             else
             {
                 Ingeniero.Add(ing);
-                btnGuardar.Text = "Guardar";
+                
             }
+            btnGuardar.Text = "Guardar";
             Actualizar();
             Limpiar();
         }
